@@ -44,7 +44,11 @@ There are different types of data containers in the PE structure, each holding d
     .reloc image relocation information
     .rsrc links external resources used by the program such as images, icons, embedded binaries, and manifest file, which has all information about program versions, authors, company, and copyright!
 
-## Techniques Covered
+## Why do we need to know about PE?
+
+AV software and malware analysts analyze EXE files based on the infomation in the PE Headerr and other PE sections. So to be able to crreate or modify malware with AV evasion capability targeting a windows machine, we need to be able to understand the structure of Windows PE files and where the malicious shellcode can be stored. 
+
+We can control in which Data section to store our shellcode by how we define and initialise the shellcode variable. Some examples would be defining the shellcode as a local variable within the main function will store it in the .TEXT PE section
 
 ### 1. Shellcode Encoding
 
