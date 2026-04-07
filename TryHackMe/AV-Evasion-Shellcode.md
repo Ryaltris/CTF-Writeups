@@ -9,21 +9,45 @@
 
 ## Overview
 
-Brief 2-3 sentence summary of what the room covered and what the learning objective was.
+Explore how to build and deliver payloads, focusing on avoiding detection by common AV engines. And also look at different techniques available to attackers and discuss the pros and cons of every one of them.
 
 ---
 
 ## What is AV Evasion?
 
-Explain in your own words what antivirus evasion is, why attackers need it, 
-and what the room set out to teach. 2-3 sentences is fine.
+Antivirus evasion is the ability for either your program or malicious code to be delivered or run and it not get flagged by the AntiVirus on the hosts computer.
 
 ---
+
+## Task 2
+
+In this challenge a Windows machine is prepared for us to be able to upload out payloads into and then checked by the AV on the machine. The main goal of this challenge is to evade the AntiVirus software installed on the machine and capture the flag on the system.
+
+## Task 3
+
+This challenge highlights high level essential elements of PE (Portable Executable) data structure for Windows Binaries. Windows Executable file format, aka PE, is a data structure that holds informaition necessary for files. Its also a way to organise executable file code on a disk. Operating systen components, such as Widnows and DOS loaders, can load it into memory and execute it based on the parsed file infomation found in the PE.
+
+Default file structure of Windows binaries, such as EXE, DLL, and Object code fiels, has the same PE strructure and works in the Windows operatin system for both x86 and x64 CPU architecture. 
+
+A PE structure contains sections that hold information about the binary, such as metadata and links to a memory address of external libraries. One of these sections is the PE Header, which contains metadata information, pointers, and links to address sections in memory. Another section is the Data section, which includes containers that include the information required for the Windows loader to run a program, such as the executable code, resources, links to libraries, data variables, etc. 
+
+<img width="762" height="555" alt="image" src="https://github.com/user-attachments/assets/c8bbb24a-f54a-493d-9d59-6f04d3ec95db" />
+
+There are different types of data containers in the PE structure, each holding different data.
+
+    .text stores the actual code of the program
+    .data holds the initialized and defined variables
+    .bss holds the uninitialized data (declared variables with no assigned values)
+    .rdata contains the read-only data
+    .edata: contains exportable objects and related table information
+    .idata imported objects and related table information
+    .reloc image relocation information
+    .rsrc links external resources used by the program such as images, icons, embedded binaries, and manifest file, which has all information about program versions, authors, company, and copyright!
 
 ## Techniques Covered
 
 ### 1. Shellcode Encoding
-What encoding is, how it works, and why it bypasses signature-based AV detection.
+
 ```bash
 # commands you ran here
 ```
